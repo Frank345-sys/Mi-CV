@@ -1,6 +1,6 @@
 .nav__toggle {
   color: var(--title-color);
   font-weight: var(--font-medium);
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   cursor: pointer;
 }
