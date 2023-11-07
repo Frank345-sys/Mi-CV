@@ -57,16 +57,8 @@ module.exports = {
         ],
       },
       {
-        test: /\.pdf$/,
-        use: "url-loader",
-      },
-      {
-        test: /\.pdf$/,
-        use: "file-loader",
-      },
-      {
         // la regla para procesar archivos
-        test: /\.(png|svg|jpg|gif|woff(2)?|eot|ttf|otf)$/,
+        test: /\.(png|svg|jpg|gif|woff(2)?|eot|ttf|otf|pdf)$/,
         type: "asset/resource",
       },
     ],
