@@ -1,0 +1,3 @@
+.nav__menu_active {
+  bottom: var(--header-height);
+}

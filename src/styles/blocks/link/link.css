@@ -1,0 +1,10 @@
+.link {
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--small-font-size);
+  color: var(--text-color);
+}
+
+.link:hover {
+  color: var(--title-color);
+}

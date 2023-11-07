@@ -1,0 +1,9 @@
+.home__container {
+  gap: 3rem;
+}
+
+@media screen and (min-width: 968px) {
+  .home__container {
+    gap: 1.5rem;
+  }
+}

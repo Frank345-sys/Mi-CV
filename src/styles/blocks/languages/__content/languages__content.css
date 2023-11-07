@@ -1,0 +1,11 @@
+.languages__content {
+  grid-template-columns: repeat(2, ifr);
+  gap: 0;
+}
+
+@media screen and (min-width: 968px) {
+  .languages__content {
+    grid-template-columns: repeat(2, max-content);
+    column-gap: 2rem;
+  }
+}

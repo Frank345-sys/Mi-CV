@@ -1,0 +1,8 @@
+.home__img {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  justify-self: center;
+  margin-bottom: var(--mb-1);
+  filter: grayscale(1);
+}

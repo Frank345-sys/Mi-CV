@@ -1,0 +1,6 @@
+@media screen and (min-width: 968px) {
+  .resume__left {
+    background-color: var(--container-color-alt);
+    padding: 0 1.5rem;
+  }
+}

@@ -1,0 +1,4 @@
+.social__container {
+  grid-template-columns: max-content;
+  gap: 1rem;
+}

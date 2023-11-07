@@ -1,0 +1,19 @@
+.generate-pdf {
+  position: absolute;
+  left: 0;
+  top: 2.2rem;
+  display: none;
+  color: var(--text-color);
+  font-size: 1.75rem;
+  cursor: pointer;
+}
+
+.generate-pdf:hover {
+  color: var(--title-color);
+}
+
+@media screen and (min-width: 968px) {
+  .generate-pdf {
+    display: inline-block;
+  }
+}

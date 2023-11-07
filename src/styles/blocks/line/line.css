@@ -1,0 +1,7 @@
+.line {
+  display: block;
+  height: 110%;
+  width: 2px;
+  background-color: var(--text-color-light);
+  transform: translate(7px, 0);
+}
