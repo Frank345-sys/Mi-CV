@@ -1,5 +1,5 @@
 .languages__content {
-  grid-template-columns: repeat(2, ifr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 0;
 }
 

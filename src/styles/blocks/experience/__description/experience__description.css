@@ -1,3 +1,10 @@
 .experience__description {
-  margin-bottom: var(--mb-2);
+  margin-bottom: var(--mb-1);
+}
+
+.experience__description li {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 17px auto;
+  margin-bottom: 0.375rem;
 }
