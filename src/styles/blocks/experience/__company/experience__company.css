@@ -1,4 +1,5 @@
 .experience__company {
-  font-size: var(--small-font-size);
+  font-size: var(--smaller-font-size);
   color: var(--title-color);
+  margin-bottom: var(--mb-1);
 }

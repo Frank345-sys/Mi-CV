@@ -1,5 +1,5 @@
 .experience__description {
-  margin-bottom: var(--mb-1);
+  margin: var(--mb-1) 0;
 }
 
 .experience__description li {
