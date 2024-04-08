@@ -1,11 +1,13 @@
 @media screen and (min-width: 968px) {
   .resume {
     display: grid;
+    height: 100%;
+    width: 100%;
     grid-template-columns: 0.5fr 1fr;
     background-color: var(--container-color);
     box-shadow: 0 0 8px rgba(13, 12, 12, 0.15);
-    animation: fadeIn 1s ease-in both;
-    animation-delay: 1s;
+    /*animation: fadeIn 0.5s ease-in both;
+    animation-delay: 1s;*/
   }
 
   @keyframes fadeIn {

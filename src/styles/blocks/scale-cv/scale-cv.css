@@ -1,7 +1,7 @@
 body.scale-cv {
-  --h1-font-size: 0.938rem;
-  --h2-font-size: 0.938rem;
-  --h3-font-size: 0.874rem;
+  --h1-font-size: 1rem;
+  --h2-font-size: 0.932rem;
+  --h3-font-size: 0.875rem;
   --normal-font-size: 0.75rem;
   --small-font-size: 0.688rem;
   --smaller-font-size: 0.625rem;
@@ -13,13 +13,21 @@ body.scale-cv {
 .scale-cv .certificate__content .link {
   display: none;
 }
-
+/*
 .scale-cv .bd-container {
   max-width: 596px;
 }
 
+*/
+
+.scale-cv .bd-container {
+  max-height: 1056px;
+  max-width: 816px;
+}
+
 .scale-cv .section {
-  padding: 1.5rem 0 0.303rem;
+  /*padding: 1.5rem 0 0.3rem;*/
+  padding: 1rem 0 0.3rem;
 }
 
 .scale-cv .section-title {
@@ -68,7 +76,7 @@ body.scale-cv {
 .scale-cv .rounder {
   height: 11px;
   width: 11px;
-  margin-top: 0.22rem;
+  margin-top: 0.25rem;
 }
 
 .scale-cv .line {

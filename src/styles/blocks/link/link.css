@@ -1,10 +1,48 @@
 .link {
+  width: fit-content;
   display: inline-flex;
   align-items: center;
   font-size: var(--small-font-size);
-  color: var(--text-color);
+  color: var(--text-color-a);
 }
 
+.link-animation {
+  background-image: linear-gradient(
+    to right,
+    #2e86c1,
+    #2e86c1 50%,
+    #54b3d6 50%
+  );
+  background-size: 200% 100%;
+  background-position: 100%;
+  position: relative;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+.link-animation:before {
+  content: "";
+  background: #54b3d6;
+  display: block;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  transition: all 0.3s ease-in-out;
+}
+
+/*
 .link:hover {
   color: var(--title-color);
+}
+*/
+
+.link-animation:hover {
+  background-position: 0;
+}
+
+.link-animation:hover::before {
+  width: 100%;
 }

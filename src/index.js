@@ -1,10 +1,10 @@
 import "./styles/index.css";
 import html2pdf from "html2pdf.js";
 
-const showMenu = (toggleId, navId) => {
-  const toggle = document.querySelector("#" + toggleId);
-  const nav = document.querySelector("#" + navId);
-
+// Función para mostrar / ocultar el menú de navegación
+const toggleMenu = () => {
+  const toggle = document.querySelector("#nav-toggle");
+  const nav = document.querySelector("#nav-menu");
   if (toggle && nav) {
     toggle.addEventListener("click", () => {
       nav.classList.toggle("nav__menu_active");
@@ -12,85 +12,95 @@ const showMenu = (toggleId, navId) => {
   }
 };
 
-showMenu("nav-toggle", "nav-menu");
-
-const navLink = document.querySelectorAll(".nav__link");
-
-function linkAction() {
-  const navMenu = document.querySelector("#nav-menu");
-  navMenu.classList.remove("nav__menu_active");
-}
-navLink.forEach((n) => n.addEventListener("click", linkAction));
-
-function scrollTop() {
-  const scrollTop = document.querySelector("#scroll-top");
-  if (this.scrollY >= 200) scrollTop.classList.add("scrolltop_active");
-  else scrollTop.classList.remove("scrolltop_active");
-}
-
-window.addEventListener("scroll", scrollTop);
-
-const themeButton = document.querySelector("#theme-button");
-const darkTheme = "dark-theme";
-const iconTheme = "bx-sun";
-
-// Previously selected topic (if user selected)
-const selectedTheme = localStorage.getItem("selected-theme");
-const selectedIcon = localStorage.getItem("selected-icon");
-
-// We obtain the current theme that the interface has by validating the dark-theme class
-const getCurrentTheme = () =>
-  document.body.classList.contains(darkTheme) ? "dark" : "light";
-const getCurrentIcon = () =>
-  themeButton.classList.contains(iconTheme) ? "bx-moon" : "bx-sun";
-
-// We validate if the user previously chose a topic
-if (selectedTheme) {
-  // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
-  document.body.classList[selectedTheme === "dark" ? "add" : "remove"](
-    darkTheme
-  );
-  themeButton.classList[selectedIcon === "bx-moon" ? "add" : "remove"](
-    iconTheme
-  );
-}
-
-// Activate / deactivate the theme manually with the button
-themeButton.addEventListener("click", () => {
-  // Add or remove the dark / icon theme
-  document.body.classList.toggle(darkTheme);
-  themeButton.classList.toggle(iconTheme);
-  // We save the theme and the current icon that the user chose
-  localStorage.setItem("selected-theme", getCurrentTheme());
-  localStorage.setItem("selected-icon", getCurrentIcon());
-});
-
-function scaleCv() {
-  document.body.classList.add("scale-cv");
-}
-
-function removeScaleCv() {
-  document.body.classList.remove("scale-cv");
-}
-
-function generateResume() {
-  html2pdf(areaCv, opt);
-}
-
-let opt = {
-  margin: 0,
-  filename: "MI-CV-2023.pdf",
-  image: { type: "jpeg", quality: 0.98 },
-  html2canvas: { scale: 4 },
-  jsPDF: { format: "a4", orientation: "portrait" },
+// Función para cerrar el menú de navegación al hacer clic en un enlace
+const closeMenuOnClick = () => {
+  const navLinks = document.querySelectorAll(".nav__link");
+  const closeMenu = () => {
+    const navMenu = document.querySelector("#nav-menu");
+    navMenu.classList.remove("nav__menu_active");
+  };
+  navLinks.forEach((link) => link.addEventListener("click", closeMenu));
 };
 
-let areaCv = document.querySelector("#area-cv");
+// Función para cambiar el tema (claro / oscuro)
+const toggleTheme = () => {
+  const themeButton = document.querySelector("#theme-button");
+  const darkTheme = "dark-theme";
+  const iconTheme = "bx-sun";
 
-let resumeButton = document.querySelector("#resume-button");
+  const getCurrentTheme = () =>
+    document.body.classList.contains(darkTheme) ? "dark" : "light";
+  const getCurrentIcon = () =>
+    themeButton.classList.contains(iconTheme) ? "bx-moon" : "bx-sun";
 
+  const applyTheme = () => {
+    document.body.classList.toggle(darkTheme);
+    themeButton.classList.toggle(iconTheme);
+    localStorage.setItem("selected-theme", getCurrentTheme());
+    localStorage.setItem("selected-icon", getCurrentIcon());
+  };
+
+  themeButton.addEventListener("click", applyTheme);
+
+  const selectedTheme = localStorage.getItem("selected-theme");
+  const selectedIcon = localStorage.getItem("selected-icon");
+  if (selectedTheme) {
+    document.body.classList[selectedTheme === "dark" ? "add" : "remove"](
+      darkTheme
+    );
+    themeButton.classList[selectedIcon === "bx-moon" ? "add" : "remove"](
+      iconTheme
+    );
+  }
+};
+
+// Función para escalar el CV antes de la generación del PDF
+const scaleCv = () => {
+  removeAnimations();
+  document.body.classList.add("scale-cv");
+};
+
+const removeAnimations = () => {
+  const links = document.querySelectorAll(".link");
+  links.forEach((link) => {
+    link.classList.toggle("link-animation");
+  });
+};
+
+const removeScaleCv = () => {
+  removeAnimations();
+  document.body.classList.remove("scale-cv");
+};
+
+// Función para generar el CV en formato PDF
+const generateResume = () => {
+  const opt = {
+    margin: 0,
+    filename: "Web_Developer_Jr._Francisco_Gonzalez.pdf",
+    image: { type: "jpeg", quality: 0.98 },
+    html2canvas: { scale: 4 },
+    jsPDF: {
+      format: "letter",
+      orientation: "portrait",
+    },
+  };
+  const areaCv = document.querySelector("#area-cv");
+
+  html2pdf().set(opt).from(areaCv).save();
+  //html2pdf(areaCv, opt);
+};
+
+// Event listener para generar el PDF del CV
+const resumeButton = document.querySelector("#resume-button");
 resumeButton.addEventListener("click", () => {
   scaleCv();
   generateResume();
   setTimeout(removeScaleCv, 1000);
+});
+
+// Inicialización de funciones al cargar la página
+window.addEventListener("DOMContentLoaded", () => {
+  toggleMenu();
+  closeMenuOnClick();
+  toggleTheme();
 });

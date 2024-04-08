@@ -1,4 +1,3 @@
-// webpack.config.js
 const path = require("path"); // conecta la ruta a la configuración de webpack
 const HtmlWebpackPlugin = require("html-webpack-plugin"); // plugin de conexión
 const { CleanWebpackPlugin } = require("clean-webpack-plugin"); // plugin de conexión
@@ -18,6 +17,7 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     filename: "main.js",
     publicPath: "",
+    clean: true,
   },
   target: ["web", "es5"],
   stats: { children: true }, // Muestra los errores de compilación hijos de los plugins
