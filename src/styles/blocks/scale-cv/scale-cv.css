@@ -93,6 +93,15 @@ body.scale-cv {
   margin-bottom: var(--mb-1);
 }
 
+.scale-cv .skills__item div {
+  width: 95px;
+}
+
 .scale-cv .interests__container {
   column-gap: 2.5rem;
+}
+
+.scale-cv .skills__content {
+  align-items: unset;
+  justify-content: flex-start;
 }

@@ -95,8 +95,8 @@ const generateResume = () => {
 const resumeButton = document.querySelector("#resume-button");
 resumeButton.addEventListener("click", () => {
   scaleCv();
-  generateResume();
-  setTimeout(removeScaleCv, 1000);
+  //generateResume();
+  //setTimeout(removeScaleCv, 1000);
 });
 
 //event Listener para generar CV PDF versión movil
