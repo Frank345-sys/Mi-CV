@@ -1,0 +1,61 @@
+.skills__progress-bar {
+  height: 8px;
+  border-radius: 8px;
+  background-color: #c7c8ca; /* Color de fondo de la barra de progreso */
+}
+
+.skills__progress-bar div {
+  height: 100%;
+  border-radius: 8px;
+  background-color: #4d4d4f;
+}
+
+/*
+.skills__progress-bar::-webkit-progress-bar {
+  border-radius: 8px;
+  background-color: #c7c8ca;
+}
+
+.skills__progress-bar::-moz-progress-bar {
+  border-radius: 8px;
+  color: #4d4d4f;
+  background-color: #4d4d4f; 
+}
+
+.skills__progress-bar::-ms-fill {
+  border-radius: 8px;
+  color: #4d4d4f;
+  background-color: #4d4d4f; 
+}
+
+.skills__progress-bar::-webkit-progress-value {
+  border-radius: 8px;
+  color: #4d4d4f;
+  background-color: #4d4d4f;
+}
+*/
+
+/*
+.skills__progress-bar::-webkit-progress-bar {
+  border-radius: 8px;
+  background-color: #c7c8ca; 
+}
+
+.skills__progress-bar::-webkit-progress-value {
+  border-radius: 8px;
+  border: 1px solid #4d4d4f;
+  background-color: #4d4d4f; 
+}
+
+.skills__progress-bar::-moz-progress-bar {
+  border-radius: 8px;
+  border: 1px solid #4d4d4f;
+  background-color: #4d4d4f; 
+}
+
+.skills__progress-bar::-ms-fill {
+  border-radius: 8px;
+  border: 1px solid #4d4d4f;
+  background-color: #4d4d4f; 
+}
+*/

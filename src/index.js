@@ -1,6 +1,8 @@
 import "./styles/index.css";
 import html2pdf from "html2pdf.js";
 
+const areaCv = document.querySelector("#area-cv");
+
 // Función para mostrar / ocultar el menú de navegación
 const toggleMenu = () => {
   const toggle = document.querySelector("#nav-toggle");
@@ -65,6 +67,7 @@ const removeAnimations = () => {
   links.forEach((link) => {
     link.classList.toggle("link-animation");
   });
+  areaCv.classList.remove("resume-animation");
 };
 
 const removeScaleCv = () => {
@@ -84,10 +87,8 @@ const generateResume = () => {
       orientation: "portrait",
     },
   };
-  const areaCv = document.querySelector("#area-cv");
 
   html2pdf().set(opt).from(areaCv).save();
-  //html2pdf(areaCv, opt);
 };
 
 // Event listener para generar el PDF del CV
@@ -96,6 +97,14 @@ resumeButton.addEventListener("click", () => {
   scaleCv();
   generateResume();
   setTimeout(removeScaleCv, 1000);
+});
+
+//event Listener para generar CV PDF versión movil
+
+const resumeButtonMovil = document.querySelector(".home__button-movil");
+
+resumeButtonMovil.addEventListener("click", (e) => {
+  console.log(e.target.href);
 });
 
 // Inicialización de funciones al cargar la página

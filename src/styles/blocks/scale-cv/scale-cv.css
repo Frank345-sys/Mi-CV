@@ -89,7 +89,7 @@ body.scale-cv {
   gap: 0.25rem;
 }
 
-.scale-cv .skills__name {
+.scale-cv .skills__item {
   margin-bottom: var(--mb-1);
 }
 

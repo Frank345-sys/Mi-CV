@@ -17,7 +17,7 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     filename: "main.js",
     publicPath: "",
-    clean: true,
+    //clean: true,
   },
   target: ["web", "es5"],
   stats: { children: true }, // Muestra los errores de compilación hijos de los plugins

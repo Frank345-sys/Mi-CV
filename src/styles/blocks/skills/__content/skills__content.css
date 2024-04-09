@@ -1,3 +1,5 @@
 .skills__content {
-  grid-template-columns: repeat(2, 1fr);
+  /*grid-template-columns: repeat(2, 1fr);*/
+  align-items: center;
+  justify-content: center;
 }

@@ -48,7 +48,9 @@
 @import url(./blocks/circle/circle.css);
 @import url(./blocks/skills/skills.css);
 @import url(./blocks/skills/__content/skills__content.css);
+@import url(./blocks/skills/__item/skills__item.css);
 @import url(./blocks/skills/__name/skills__name.css);
+@import url(./blocks/skills/__progress-bar/skills__progress-bar.css);
 @import url(./blocks/experience/experience.css);
 @import url(./blocks/experience/__content/experience__content.css);
 @import url(./blocks/experience/__title/experience__title.css);

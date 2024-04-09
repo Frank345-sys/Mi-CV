@@ -8,3 +8,33 @@ body.dark-theme {
   /*filter: grayscale(1);*/
   transition: 0.3s;
 }
+
+.dark-theme .skills__progress-bar {
+  background-color: #4d4d4f;
+}
+
+.dark-theme .skills__progress-bar div {
+  background-color: #bfbfbf;
+}
+
+/*
+.dark-theme .skills__progress-bar {
+  background-color: #4d4d4f;
+}
+
+.dark-theme .skills__progress-bar::-webkit-progress-bar {
+  background-color: #4d4d4f;
+}
+
+.dark-theme .skills__progress-bar::-moz-progress-bar {
+  background-color: #c7c8ca;
+}
+
+.dark-theme .skills__progress-bar::-ms-fill {
+  background-color: #c7c8ca;
+}
+
+.dark-theme .skills__progress-bar::-webkit-progress-value {
+  background-color: #c7c8ca;
+}
+*/

@@ -1,0 +1,15 @@
+.skills__item {
+  /*
+  display: flex;
+  align-items: center;*/
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(2, auto);
+  margin-bottom: var(--mb-2);
+}
+
+.skills__item div {
+  display: flex;
+  align-items: center;
+  width: 110px;
+}
