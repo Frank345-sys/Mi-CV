@@ -1,6 +1,15 @@
 import "./styles/index.css";
 import html2pdf from "html2pdf.js";
 
+const cv_dark = new URL(
+  "./pdf/Web_Developer_Jr._Francisco_Gonzalez_dark.pdf",
+  import.meta.url
+);
+const cv_light = new URL(
+  "./pdf/Web_Developer_Jr._Francisco_Gonzalez_light.pdf",
+  import.meta.url
+);
+
 const areaCv = document.querySelector("#area-cv");
 
 // Función para mostrar / ocultar el menú de navegación
@@ -104,7 +113,11 @@ resumeButton.addEventListener("click", () => {
 const resumeButtonMovil = document.querySelector(".home__button-movil");
 
 resumeButtonMovil.addEventListener("click", (e) => {
-  console.log(e.target.href);
+  if (document.body.classList.value === "dark-theme") {
+    e.target.setAttribute("href", "" + cv_dark);
+  } else if (document.body.classList.value === "") {
+    e.target.setAttribute("href", "" + cv_light);
+  }
 });
 
 // Inicialización de funciones al cargar la página
